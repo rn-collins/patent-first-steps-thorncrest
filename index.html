@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>So You Have an Invention — First Steps · ThornCrest Law</title>
+<meta name="description" content="A plain-English first-steps guide for young inventors, with ThornCrest Law, at Hawaiʻi Tech Week 2026.">
+<meta name="theme-color" content="#0e375d">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Patent Basics">
+<link rel="apple-touch-icon" href="icon-tc-180.png">
+<link rel="icon" type="image/png" href="icon-tc-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0e375d; --navy-deep:#0a2b49; --crimson:#b82a53; --crimson-deep:#98213f;
+    --ink:#26262b; --soft:#5b5b62; --bg:#f7f6f2; --card:#ffffff; --line:#e6e2da; --cream:#f4f0e8; --ok:#0a7a4b;
+    --display:"Cormorant Garamond",Georgia,serif;
+    --body:"Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{margin:0;font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:750px;margin:0 auto;padding:0 22px 96px}
+  #bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--crimson);z-index:99;transition:width .1s linear}
+
+  header{position:relative;overflow:hidden;color:#eef2f7;padding:52px 22px 42px;
+    background:linear-gradient(165deg,var(--navy) 0%,var(--navy-deep) 100%)}
+  header .fig{position:absolute;right:14px;top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#9fb6cf;opacity:.6}
+  header .blue{position:absolute;inset:0;opacity:.10;background-image:linear-gradient(#8fb3d6 1px,transparent 1px),linear-gradient(90deg,#8fb3d6 1px,transparent 1px);background-size:26px 26px}
+  .hwrap{position:relative;max-width:750px;margin:0 auto;z-index:2}
+  .brandline{display:flex;align-items:center;gap:11px;margin:0 0 24px}
+  .brandline svg{width:26px;height:30px}
+  .brandline b{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:.01em}
+  .brandline span{color:#9fb6cf;font-size:13px}
+  .kicker{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#c98aa0;font-weight:700;margin:0 0 12px}
+  h1{font-family:var(--display);font-weight:700;font-size:46px;line-height:1.05;letter-spacing:.005em;margin:0 0 14px}
+  .sub{font-size:18px;color:#cdd8e4;max-width:40ch;margin:0}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .tag{font-size:13px;color:#dbe4ee;background:rgba(255,255,255,.07);border:1px solid rgba(159,182,207,.4);padding:6px 13px;border-radius:4px}
+
+  .rev{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+  .rev.in{opacity:1;transform:none}
+
+  .disc{background:#fbf3f5;border:1px solid #ecccd6;border-left:4px solid var(--crimson);border-radius:10px;
+    padding:13px 15px;font-size:14px;color:#7a3049;margin:24px 0 6px}
+  .disc b{color:var(--crimson-deep)}
+
+  h2{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:.005em;color:var(--navy);margin:44px 0 6px}
+  .lead{color:var(--soft);margin:6px 0}
+  p{margin:12px 0}
+  sup{color:var(--crimson);font-weight:700;font-size:.72em}
+  b{color:var(--ink);font-weight:600}
+  a{color:var(--crimson-deep)}
+
+  .types{display:grid;gap:10px;margin:16px 0}
+  .type{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .type b{font-family:var(--display);font-size:19px;color:var(--navy);font-weight:700}
+  .type span{display:block;color:var(--soft);font-size:15px;margin-top:2px}
+
+  .four{counter-reset:g;display:grid;gap:10px;margin:16px 0}
+  .g{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px 14px 54px;position:relative}
+  .g:before{counter-increment:g;content:counter(g);position:absolute;left:14px;top:13px;width:28px;height:28px;border-radius:50%;
+    background:var(--navy);color:#fff;font-family:var(--display);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:16px}
+  .g b{color:var(--navy)}
+
+  /* myth flip cards */
+  .myth{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 16px;margin:10px 0;cursor:pointer;transition:border-color .2s}
+  .myth:active{border-color:var(--crimson)}
+  .myth .m{font-weight:600;color:var(--ink);display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+  .myth .m .tapn{font-family:var(--body);font-size:12px;color:var(--crimson);white-space:nowrap;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-top:3px}
+  .myth .truth{max-height:0;overflow:hidden;transition:max-height .3s ease,margin .3s ease;color:var(--soft);font-size:15px;margin:0}
+  .myth.open .truth{max-height:200px;margin-top:10px}
+  .myth.open .tapn{color:var(--ok)}
+
+  .prog{height:8px;background:#e8e3d9;border-radius:999px;overflow:hidden;margin:16px 0 3px}
+  .prog i{display:block;height:100%;width:0;background:var(--navy);transition:width .4s cubic-bezier(.2,.8,.2,1)}
+  .pmsg{font-size:13px;color:var(--soft);min-height:18px;margin:0 0 10px}
+  .pmsg.done{color:var(--ok);font-weight:600}
+  ul.checks{list-style:none;padding:0;margin:6px 0}
+  ul.checks li{display:flex;gap:13px;align-items:flex-start;padding:13px 2px;border-bottom:1px solid var(--line);font-size:15.5px;cursor:pointer;user-select:none}
+  ul.checks li:last-child{border-bottom:0}
+  .box{width:24px;height:24px;border:2px solid var(--navy);border-radius:6px;flex:0 0 auto;margin-top:1px;display:flex;align-items:center;justify-content:center;font-size:15px;color:#fff;transition:.2s}
+  li.on .box{background:var(--navy)}
+  li.on span.tx{color:var(--soft);text-decoration:line-through}
+
+  .callgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+  .call{text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;color:var(--ink);display:block}
+  .call .l{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--soft)}
+  .call .v{font-family:var(--display);font-weight:700;font-size:19px;color:var(--navy);margin-top:3px}
+  .call:active{border-color:var(--crimson)}
+
+  .box2{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:14px 0}
+  .box2 li{margin:9px 0;font-size:15.5px}
+
+  .actions{display:flex;gap:10px;margin:26px 0 4px;flex-wrap:wrap}
+  .btn{flex:1 1 150px;text-align:center;text-decoration:none;border-radius:6px;padding:14px;font-weight:700;font-size:15px;border:1.5px solid var(--navy);color:var(--navy);background:#fff;min-height:48px}
+  .btn.solid{background:var(--crimson);color:#fff;border-color:var(--crimson)}
+  .btn:active{transform:translateY(1px)}
+
+  .install{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0 4px}
+  .install .ttl{font-family:var(--display);font-weight:700;font-size:18px;margin:0 0 10px;color:var(--navy)}
+  .install .rows{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .install .os{border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--bg)}
+  .install .os b{display:block;font-size:13.5px;margin-bottom:3px}
+  .install .os span{font-size:13.5px;color:var(--soft)}
+  .install .os.hi{border-color:var(--crimson);background:#fbf3f5}
+  @media(max-width:430px){.install .rows,.callgrid{grid-template-columns:1fr}}
+
+  .pitch{margin:42px 0 0;border-radius:16px;padding:28px 24px;color:#eef2f7;background:linear-gradient(165deg,var(--navy),var(--navy-deep));position:relative;overflow:hidden}
+  .pitch h3{font-family:var(--display);font-size:26px;margin:0 0 10px;font-weight:700}
+  .pitch p{color:#cdd8e4;font-size:15px;margin:9px 0 0}
+  .pitch b,.pitch em{color:#fff;font-style:normal;font-weight:600}
+  .pitch p a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+  .pitch .contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .pitch .contact a{flex:1 1 190px;text-align:center;text-decoration:none;color:#fff;background:var(--crimson);border-radius:6px;padding:13px 14px;font-weight:700;font-size:14px;min-height:46px;display:flex;align-items:center;justify-content:center}
+  .pitch .sig{margin-top:16px;font-size:12.5px;color:#9fb6cf}
+
+  .refs{font-size:13px;color:var(--soft);margin-top:16px;padding-left:20px}
+  .refs li{margin:14px 0;word-break:break-word}
+  .refs a{color:var(--crimson-deep);font-weight:700;text-decoration:none;font-size:14.5px}
+  .refs a:active{text-decoration:underline}
+  .refs .ann{display:block;color:var(--soft);margin-top:4px;font-size:13px;line-height:1.55}
+  .refs .src{display:inline-block;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;font-weight:700;color:var(--crimson-deep);background:#fbf3f5;border:1px solid #ecccd6;border-radius:5px;padding:2px 7px;margin-left:6px;vertical-align:middle}
+  .refs .compiled{margin-top:18px;font-size:12.5px;color:var(--soft);font-style:italic}
+  footer{font-size:12px;color:var(--soft);margin-top:20px;line-height:1.5}
+
+  @media (max-width:430px){ h1{font-size:38px} }
+  @media print{#bar,.actions,header .blue{display:none} body{background:#fff;font-size:11.5pt} .rev{opacity:1;transform:none}
+    .myth .truth{max-height:none !important;margin-top:10px !important} .pitch,header{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<header>
+  <div class="blue"></div>
+  <div class="fig">Fig. 1 — first steps</div>
+  <div class="hwrap">
+    <div class="brandline">
+      <svg viewBox="0 0 40 46" fill="none" aria-hidden="true"><path d="M20,3 L36,9 V24 C36,35 28,41 20,44 C12,41 4,35 4,24 V9 Z" fill="#b82a53" stroke="#f4f0e8" stroke-width="2"/><path d="M20,11 V33 M13,17 H27" stroke="#f4f0e8" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <b>ThornCrest Law</b><span>· Hawaiʻi Tech Week 2026</span>
+    </div>
+    <p class="kicker">Patent Your Invention &amp; Innovation Archipelago</p>
+    <h1>So you have an invention.<br>Here are your first steps.</h1>
+    <p class="sub">A plain-English guide for young inventors and their families.</p>
+    <div class="tags"><span class="tag">For keiki &amp; families</span><span class="tag">Made with ThornCrest Law</span></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="disc rev"><b>This is education, not legal advice.</b> Every invention is different, so for your situation talk to a registered patent attorney or agent (like the folks on this panel). Fees below are current as of 2026; confirm at <a href="https://www.uspto.gov">uspto.gov</a>.</div>
+
+  <h2 class="rev">What a patent actually is</h2>
+  <p class="rev">A patent is the right to stop other people from making, using, or selling your invention for a set time.<sup>1</sup> Think of it as a right to exclude, a fence around your idea. It does not hand you a product or a profit, and it does not give you the right to build the thing yourself.<sup>1</sup> What it gives you is the legal power to keep copycats out.</p>
+  <div class="types rev">
+    <div class="type"><b>Utility patent</b><span>How something works or is used. Lasts up to 20 years from filing.<sup>2</sup></span></div>
+    <div class="type"><b>Design patent</b><span>How something looks. Lasts 15 years from grant.<sup>1</sup></span></div>
+    <div class="type"><b>Plant patent</b><span>A new, distinct plant reproduced without seeds. 20 years from filing.<sup>2</sup></span></div>
+  </div>
+  <p class="rev"><b>And they are not the same as a trademark or copyright.</b> A patent protects an invention; a trademark protects a name or logo (also at the USPTO); a copyright protects creative work like writing or music (at the U.S. Copyright Office, automatically once it is fixed); a trade secret protects confidential information for as long as you keep it secret.<sup>5,6</sup></p>
+
+  <h2 class="rev">Is it patentable? Four gates</h2>
+  <div class="four rev">
+    <div class="g"><b>The right kind of thing.</b> A process, machine, manufacture, or composition of matter. A bare idea or a law of nature is not patentable.<sup>4</sup></div>
+    <div class="g"><b>Useful.</b> It has a real, specific function.<sup>4</sup></div>
+    <div class="g"><b>New.</b> It isn't already in the prior art.<sup>4</sup></div>
+    <div class="g"><b>Non-obvious.</b> It isn't an obvious variation of what exists.<sup>4</sup></div>
+  </div>
+
+  <h2 class="rev">Your first steps</h2>
+  <div class="rev">
+    <div class="prog"><i id="pfill"></i></div>
+    <p class="pmsg" id="pmsg">Tap each step as you go.</p>
+    <ul class="checks">
+      <li><span class="box">✓</span><span class="tx"><b>Write it down.</b> Date it, sketch it, describe how it works.<sup>15</sup></span></li>
+      <li><span class="box">✓</span><span class="tx"><b>Zip your lips before you file.</b> The U.S. gives a one-year grace period after your own disclosure, but most countries give none, so file before you show.<sup>7</sup></span></li>
+      <li><span class="box">✓</span><span class="tx"><b>Search first (free).</b> USPTO Patent Public Search and Google Patents.<sup>8</sup></span></li>
+      <li><span class="box">✓</span><span class="tx"><b>Consider a provisional.</b> Locks an early date and “patent pending” for 12 months. It is never examined and is not a patent by itself.<sup>9</sup></span></li>
+      <li><span class="box">✓</span><span class="tx"><b>Claim your discount.</b> Most students qualify as a micro entity, about 80% off. A provisional is $65 at that rate.<sup>10,11,12</sup></span></li>
+      <li><span class="box">✓</span><span class="tx"><b>Calendar the 12-month deadline</b> to file the full application. This is where an attorney or agent earns their keep.<sup>9</sup></span></li>
+    </ul>
+  </div>
+
+  <h2 class="rev">Search it yourself, free</h2>
+  <div class="actions rev">
+    <a class="btn solid" href="https://ppubs.uspto.gov/pubwebapp/">USPTO Patent Public Search</a>
+    <a class="btn" href="https://patents.google.com">Google Patents</a>
+  </div>
+
+  <h2 class="rev">Myths worth killing</h2>
+  <p class="lead rev">Tap each one to bust it.</p>
+  <div class="myth rev"><div class="m"><span>“You can patent an idea.”</span><span class="tapn">Tap</span></div><div class="truth">No. You patent a specific, described invention, not a bare concept.<sup>4</sup></div></div>
+  <div class="myth rev"><div class="m"><span>“I have to build a working model first.”</span><span class="tapn">Tap</span></div><div class="truth">No. The USPTO rarely requires a model. A clear written description is usually enough.<sup>1</sup></div></div>
+  <div class="myth rev"><div class="m"><span>“Mailing myself a letter protects me.”</span><span class="tapn">Tap</span></div><div class="truth">No. The “poor man's patent” has no legal effect. Since March 16, 2013 the U.S. is first-inventor-to-file, so only filing counts.<sup>15</sup></div></div>
+  <div class="myth rev"><div class="m"><span>“A provisional is a patent.”</span><span class="tapn">Tap</span></div><div class="truth">No. It's a 12-month placeholder that is never examined.<sup>9</sup></div></div>
+  <div class="myth rev"><div class="m"><span>“Patents are cheap and fast.”</span><span class="tapn">Tap</span></div><div class="truth">No. A full patent commonly costs thousands and often takes two or more years to grant.<sup>10</sup></div></div>
+
+  <h2 class="rev">Free help — tap to call</h2>
+  <div class="callgrid rev">
+    <a class="call" href="tel:18667673848"><div class="l">USPTO Pro Se Center</div><div class="v">1-866-767-3848</div></a>
+    <a class="call" href="tel:8085863477"><div class="l">Hawaiʻi State Library · Patents</div><div class="v">(808) 586-3477</div></a>
+  </div>
+  <p class="rev">If money is tight, the <b>Patent Pro Bono Program</b> offers free volunteer attorneys for those who qualify; Hawaiʻi inventors are served through the California Inventors Assistance Program.<sup>13,14</sup></p>
+
+  <h2 class="rev">Hawaiʻi resource box</h2>
+  <div class="box2 rev">
+    <ul style="margin:0;padding-left:18px">
+      <li><b>Hawaiʻi State Library — Patent &amp; Trademark Resource Center</b> (downtown Honolulu): free search help. The only such center in the Pacific.<sup>16</sup></li>
+      <li><b>USPTO for kids, students &amp; educators:</b> free lessons and resources.<sup>18</sup></li>
+      <li><b>Made it using University of Hawaiʻi resources?</b> Talk to UH's Office of Innovation and Commercialization first.<sup>17</sup></li>
+      <li><b>Young makers:</b> Camp Invention, a K–6 STEM program, runs in Hawaiʻi.<sup>19</sup></li>
+    </ul>
+  </div>
+
+  <h2 class="rev">A little local inspiration</h2>
+  <p class="rev">You don't have to leave these islands to invent something the world uses. Three Hawaiʻi inventors on today's panel prove it, with work spanning semiconductors, crowdfunding, and email security.<sup>20</sup> Ask them how they started. Everyone starts somewhere.</p>
+
+  <div class="actions rev">
+    <a class="btn solid" href="#" onclick="window.print();return false;">Download PDF</a>
+    <a class="btn" href="#" id="share">Share</a>
+  </div>
+
+  <div class="install rev">
+    <p class="ttl">Keep it on your phone, like an app</p>
+    <div class="rows">
+      <div class="os" id="os-ios"><b>iPhone / iPad · Safari</b><span>Tap the <b>Share</b> icon, then <b>Add to Home Screen</b>.</span></div>
+      <div class="os" id="os-and"><b>Android · Chrome</b><span>Tap the <b>⋮</b> menu, then <b>Add to Home screen</b> (or <b>Install app</b>).</span></div>
+    </div>
+  </div>
+
+  <div class="pitch rev">
+    <h3>Liked this take-home?</h3>
+    <p>This was researched, written, and designed by <a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener noreferrer"><b>RN Collins</b></a>, a law student and creator-analyst who turns technical work into things people actually keep and use: explainers, briefs, interactive resources, and small tools, tailored to your brand and your audience.</p>
+    <p>If you'd like one built around <em>your</em> practice, I'd love to talk.</p>
+    <div class="contact">
+      <a href="https://www.linkedin.com/in/rn-collins">Connect on LinkedIn</a>
+      <a href="mailto:collins.ra@northeastern.edu">Email directly</a>
+    </div>
+    <p class="sig">Made for ThornCrest Law · Hawaiʻi Tech Week 2026 · RN Collins</p>
+  </div>
+
+  <h2 class="rev">Resources</h2>
+  <p class="lead rev">Every fact on this page is sourced. Tap any title to open the original in a new tab. Figures verified July 2026; confirm current fees at uspto.gov.</p>
+  <ol class="refs rev">
+    <li id="r1"><a href="https://www.uspto.gov/patents/basics/essentials" target="_blank" rel="noopener noreferrer">USPTO — Patent essentials</a> <span class="src">Official · USPTO</span><span class="ann">The government's plain-language overview of what a patent is. Source for “a patent is a right to exclude,” the design-patent 15-year term, and the point that a working model is rarely required.</span></li>
+    <li id="r2"><a href="https://www.uspto.gov/web/offices/pac/mpep/s2701.html" target="_blank" rel="noopener noreferrer">USPTO — MPEP §2701, Patent Term</a> <span class="src">Primary · USPTO rulebook</span><span class="ann">The rulebook section on how long patents last. Confirms utility and plant patents run 20 years from the filing date.</span></li>
+    <li id="r3"><a href="https://www.uspto.gov/patents/basics/types-patent-applications" target="_blank" rel="noopener noreferrer">USPTO — Types of patent applications</a> <span class="src">Official · USPTO</span><span class="ann">The official breakdown of utility, design, and plant patents. Source for the three-types section.</span></li>
+    <li id="r4"><a href="https://www.uspto.gov/web/offices/pac/mpep/s2104.html" target="_blank" rel="noopener noreferrer">USPTO — MPEP §2104, requirements for patentability</a> <span class="src">Primary · USPTO rulebook</span><span class="ann">The examiner's guide to §§101–103. Source for the “four gates”: patentable subject matter, usefulness, novelty, and non-obviousness.</span></li>
+    <li id="r5"><a href="https://www.uspto.gov/trademarks/basics/trademark-patent-copyright" target="_blank" rel="noopener noreferrer">USPTO — Trademark, patent, or copyright?</a> <span class="src">Official · USPTO</span><span class="ann">The USPTO's own side-by-side. Used to keep the patent-vs-trademark-vs-copyright-vs-trade-secret distinctions accurate, since families mix these up constantly.</span></li>
+    <li id="r6"><a href="https://www.copyright.gov/what-is-copyright/" target="_blank" rel="noopener noreferrer">U.S. Copyright Office — What is copyright?</a> <span class="src">Official · U.S. Copyright Office</span><span class="ann">The primary source for the copyright half of that comparison, and the reminder that copyright is handled by a different office (the Library of Congress), not the USPTO.</span></li>
+    <li id="r7"><a href="https://www.uspto.gov/web/offices/pac/mpep/s2152.html" target="_blank" rel="noopener noreferrer">USPTO — MPEP §2152, prior art and the grace period</a> <span class="src">Primary · USPTO rulebook</span><span class="ann">The rule behind the most important warning here: the U.S. one-year grace period after your own disclosure, and why most other countries give none. This is the “file before you show” citation.</span></li>
+    <li id="r8"><a href="https://www.uspto.gov/patents/search/patent-public-search" target="_blank" rel="noopener noreferrer">USPTO — Patent Public Search</a> <span class="src">Official tool · USPTO</span><span class="ann">The free official search tool. Linked so young inventors can check what already exists before spending anything.</span></li>
+    <li id="r9"><a href="https://www.uspto.gov/patents/basics/apply/provisional-application" target="_blank" rel="noopener noreferrer">USPTO — Provisional application for patent</a> <span class="src">Official · USPTO</span><span class="ann">The official page on provisionals. Source for “locks an early date and patent-pending for 12 months,” that it is never examined, and the non-extendable 12-month deadline.</span></li>
+    <li id="r10"><a href="https://www.uspto.gov/sites/default/files/documents/USPTO-fee-schedule_current.pdf" target="_blank" rel="noopener noreferrer">USPTO — Fee schedule (current)</a> <span class="src">Primary · USPTO</span><span class="ann">The live fee table. Source for the $325 / $130 / $65 provisional filing fees and the reality that a full patent runs into the thousands.</span></li>
+    <li id="r11"><a href="https://www.uspto.gov/patents/laws/micro-entity-status" target="_blank" rel="noopener noreferrer">USPTO — Micro entity status</a> <span class="src">Official · USPTO</span><span class="ann">Defines who qualifies for the deepest discount. Source for the ~80% reduction, the income limit, and the four-prior-applications rule.</span></li>
+    <li id="r12"><a href="https://www.uspto.gov/patents/apply/save-on-fees" target="_blank" rel="noopener noreferrer">USPTO — Save on fees</a> <span class="src">Official · USPTO</span><span class="ann">Explains the small-entity (60%) and micro-entity (80%) reductions in one place. Backs the “claim your discount” step.</span></li>
+    <li id="r13"><a href="https://www.uspto.gov/patents/patents-ombuds/pro-se-assistance-center" target="_blank" rel="noopener noreferrer">USPTO — Pro Se Assistance Center</a> <span class="src">Official · USPTO</span><span class="ann">The free help line for people filing without an attorney. Source for the 1-866-767-3848 tap-to-call button.</span></li>
+    <li id="r14"><a href="https://www.uspto.gov/patents/basics/using-legal-services/pro-bono/patent-pro-bono-program" target="_blank" rel="noopener noreferrer">USPTO — Patent Pro Bono Program</a> <span class="src">Official · USPTO</span><span class="ann">The national free-attorney program. Confirms that income-qualified Hawaiʻi inventors are served through the California Inventors Assistance Program.</span></li>
+    <li id="r15"><a href="https://www.uspto.gov/patents/first-inventor-file-fitf-resources" target="_blank" rel="noopener noreferrer">USPTO — First-inventor-to-file resources</a> <span class="src">Official · USPTO</span><span class="ann">Explains the 2013 shift to first-inventor-to-file, which is why the “poor man's patent” myth is dead. Backs that myth-buster.</span></li>
+    <li id="r16"><a href="https://www.librarieshawaii.org/how-do-i/get-federal-documents/patent-and-trademarks/" target="_blank" rel="noopener noreferrer">Hawaiʻi State Public Library System — Patents &amp; Trademarks</a> <span class="src">Government · Hawaiʻi</span><span class="ann">Confirms the Patent &amp; Trademark Resource Center is at the Hawaiʻi State Library (not a UH library) and provides the (808) 586-3477 number in the resource box.</span></li>
+    <li id="r17"><a href="https://research.hawaii.edu/oic/" target="_blank" rel="noopener noreferrer">University of Hawaiʻi — Office of Innovation and Commercialization</a> <span class="src">University · UH</span><span class="ann">The current UH tech-transfer office. Included because inventions made using UH resources may be subject to UH's IP rules.</span></li>
+    <li id="r18"><a href="https://www.uspto.gov/learning-and-resources/kids-educators" target="_blank" rel="noopener noreferrer">USPTO — Kids, students, and educators</a> <span class="src">Official · USPTO</span><span class="ann">The USPTO's free youth learning hub. Linked as a next step for young inventors and their teachers.</span></li>
+    <li id="r19"><a href="https://www.invent.org/programs/camp-invention" target="_blank" rel="noopener noreferrer">National Inventors Hall of Fame — Camp Invention</a> <span class="src">Nonprofit · NIHF</span><span class="ann">A K–6 summer STEM program that runs in Hawaiʻi. Included as a hands-on option for younger keiki.</span></li>
+    <li id="r20"><a href="https://inspirationhawaiimuseum.org/" target="_blank" rel="noopener noreferrer">Inspiration Hawaii Museum</a> <span class="src">Host org</span><span class="ann">The host of this panel. Referenced for the local-inventor inspiration and the event itself.</span></li>
+  </ol>
+
+  <footer>A free educational take-home for Hawaiʻi Tech Week 2026, with ThornCrest Law, reviewed for accuracy by the session moderator before distribution. Not legal advice.</footer>
+</div>
+
+<script>
+  var bar=document.getElementById('bar');
+  addEventListener('scroll',function(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight;bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';},{passive:true});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.14});
+  document.querySelectorAll('.rev').forEach(function(el){io.observe(el);});
+  document.querySelectorAll('.myth').forEach(function(m){m.addEventListener('click',function(){m.classList.toggle('open');});});
+  var items=[].slice.call(document.querySelectorAll('ul.checks li')),fill=document.getElementById('pfill'),msg=document.getElementById('pmsg'),
+      lines=['Tap each step as you go.','Good start.','Keep going.','Over halfway.','Almost there.','One more.','That’s the path. Now go build it.'];
+  items.forEach(function(li){li.addEventListener('click',function(){li.classList.toggle('on');var n=document.querySelectorAll('ul.checks li.on').length;fill.style.width=(n/items.length*100)+'%';msg.textContent=lines[n];msg.classList.toggle('done',n===items.length);});});
+  document.getElementById('share').addEventListener('click',function(ev){ev.preventDefault();if(navigator.share){navigator.share({title:'So You Have an Invention — First Steps',url:location.href});}else{navigator.clipboard.writeText(location.href);this.textContent='Link copied ✓';}});
+  (function(){var ua=navigator.userAgent||'';var isIOS=/iPad|iPhone|iPod/.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);var isAnd=/Android/.test(ua);if(isIOS){document.getElementById('os-ios').classList.add('hi');}else if(isAnd){document.getElementById('os-and').classList.add('hi');}})();
+</script>
+</body>
+</html>
